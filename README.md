@@ -21,4 +21,36 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* DB設計
+
+## usersテーブル
+|Column|Type|Option|
+|------|----|------|
+|name|text|null:false|
+|email|text|null:false,unique:true|
+|password|text|null:false|
+
+### Association
+- has_many :groups
+- has_many :massages
+
+## groupsテーブル
+|Column|Type|Option|
+|------|----|------|
+|name|text|null:false|
+
+### Association
+- has_many :users
+- has_many :massages
+
+## messagesテーブル
+|Column|Type|Option|
+|------|----|------|
+|body|text||
+|image|string||
+|user_id|integer|null:false,foreign_key:true|
+|group_id|integer|null:false,forenign_key:true|
+
+### Association
+- belongs_to :group
+- belongs_to :user

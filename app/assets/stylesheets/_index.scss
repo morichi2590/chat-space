@@ -8,17 +8,17 @@
   width: 100%;
 }
 
-.contents_left{
+.chat_side{
   background-color: #253141;
   width: 300px;
   height:1000px;
   color: #FFF;
-  .contents_left_top{
+  .chat_side_top{
     height: 140px;
     background-color: black;
-    .contents_left_top_name{
+    .chat_side_top_name{
       width:179px;
-      @include contents_start_position;
+      @include chat_start_position;
       font-weight: 700;
       font-size: 20px;
       margin-left: 20px;
@@ -26,25 +26,25 @@
       word-wrap: break-word;
       float: left;
     }
-    .contents_left_top_icon{
+    .chat_side_top_icon{
       width:80px;
-      @include contents_start_position;
+      @include chat_start_position;
       margin-right: 20px;
       padding-top: 5px;
       float: right;
     }
   }
-  .contents_left_lists{
+  .chat_side_lists{
     background-color: #393e4f;
-    .contents_left_lists_gruop{
+    .chat_side_lists_gruop{
       width:260px;
       margin-left: 20px;
-      .contents_left_lists_group_title{
+      .chat_side_lists_group_title{
         font-size: 15px;
         padding-top: 20px;
         word-wrap: break-word;
       }
-      .contents_left_lists_group_text{
+      .chat_side_lists_group_text{
         font-size: 11px;
         padding-top: 5px;
         padding-bottom: 20px;

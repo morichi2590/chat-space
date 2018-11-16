@@ -1,13 +1,15 @@
 %div{:class => "header"}
   %h1 メッセージ投稿完了しました
 
-%div{:class => "contents_left"}
-  %div{:class => "contents_left_top"}
-    %div{:class => "contents_left_top_name"}
+%div{:class => "chat_side"}
+  %div{:class => "chat_side_top"}
+    %div{:class => "chat_side_top_name"}
       %p{:id => "user"} ユーザーの名前が表示される
-    %div{:class => "contents_left_top_icon"}
+    %div{:class => "chat_side_top_icon"}
       = link_to 'http://google.co.jp' do
         %i.fa.fa-edit
       = link_to 'http://yahoo.co.jp' do
         %i.fa.fa-cog
   = render partial:'messages/group'
+
+%div{:class => "chat_main"}

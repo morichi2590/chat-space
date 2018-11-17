@@ -1,15 +1,37 @@
 %div{:class => "header"}
   %h1 メッセージ投稿完了しました
 
-%div{:class => "chat_side"}
-  %div{:class => "chat_side_top"}
-    %div{:class => "chat_side_top_name"}
-      %p{:id => "user"} ユーザーの名前が表示される
-    %div{:class => "chat_side_top_icon"}
-      = link_to 'http://google.co.jp' do
-        %i.fa.fa-edit
-      = link_to 'http://yahoo.co.jp' do
-        %i.fa.fa-cog
-  = render partial:'messages/group'
+%div{:class => "chat"}
+  %div{:class => "chat_main"}
+    %div{:class => "chat_main_top"}
+      %div{:class => "chat_main_top_groupedit"}
+        = link_to 'http://google.co.jp' do
+          %p Edit
+      %div{:class => "chat_main_top_groupname"}
+        %p グループの名前を表示
+      %div{:class => "chat_main_top_groupmember"}
+        %p MEMBER:グループメンバーの名前を表示
+    %div{:class => "chat_main_message"}
+      %div{:class => "chat_main_message_top_marjin"}
+      = render partial:'messages/message'
+    %div{:class => "chat_main_bottom"}
+      %div{:class => "chat_main_bottom_send"}
+        = link_to 'http://google.co.jp' do
+          %p Send
+      %div{:class => "chat_main_bottom_text"}
+        %textarea{:placeholder => "type a message"}
+        %div{:class => "chat_main_bottom_imageicon"}
+          = link_to 'http://google.co.jp' do
+            %i.fa.fa-image
+  %div{:class => "chat_side"}
+    %div{:class => "chat_side_top"}
+      %div{:class => "chat_side_top_name"}
+        %p{:id => "user"} ユーザーの名前
+      %div{:class => "chat_side_top_icon"}
+        = link_to 'http://google.co.jp' do
+          %i.fa.fa-edit
+        = link_to 'http://yahoo.co.jp' do
+          %i.fa.fa-cog
+    %div{:class => "chat_side_lists"}
+      = render partial:'messages/group'
 
-%div{:class => "chat_main"}

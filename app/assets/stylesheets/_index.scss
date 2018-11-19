@@ -1,5 +1,7 @@
 @import "./mixin";
 
+$chat_side-basecolor: #253141;
+
 a {
 color: #FFF;
 text-decoration: none ;
@@ -17,17 +19,15 @@ text-decoration: none ;
   .chat_main{
     width: 79%;
     float: right;
-      a {
-        color: black;
-        text-decoration: none ;
-      }
+    a {
+      color: black;
+    }
     .chat_main_top{
       height: 100px;
       background-color: #FFF;
       border: 1px solid #eee;
       .chat_main_top_groupname{
         height: 40px;
-        width: 400px;
         position: relative;
         top: 35px;
         @include chat_main_leftside_marjin;
@@ -36,7 +36,6 @@ text-decoration: none ;
       }
       .chat_main_top_groupmember{
         height: 20px;
-        width: 400px;
         position: relative;
         top: 35px;
         @include chat_main_leftside_marjin;
@@ -55,8 +54,8 @@ text-decoration: none ;
         border: solid;
         border-width: 2px;
         color: #38AEF0;
-         p{
-           color: #38AEF0;
+        p{
+          color: #38AEF0;
         }
       }
     }
@@ -65,7 +64,6 @@ text-decoration: none ;
       width: 100%;
       overflow-y: scroll;
       .chat_main_message_body{
-        background-color: #FFF;
         margin: 46px 40px 40px 40px;
       }
         .chat_main_message_body_name{
@@ -132,17 +130,13 @@ text-decoration: none ;
     }
   }
   .chat_side{
-    background-color: #253141;
+    background-color: $chat_side-basecolor;
     width: 21%;
     color: #FFF;
-    a {
-      color: #FFF;
-      text-decoration: none ;
-      }
     .chat_side_top{
       height: 100px;
-      background-color: #253141;
-      border: 1px solid #253141;
+      background-color: $chat_side-basecolor;
+      border: 1px solid $chat_side-basecolor;
       .chat_side_top_name{
         width:179px;
         margin-top: 40px;
@@ -170,13 +164,11 @@ text-decoration: none ;
         .chat_side_lists_group_title{
           font-size: 15px;
           padding-top: 20px;
-          word-wrap: break-word;
         }
         .chat_side_lists_group_text{
           font-size: 11px;
           padding-top: 5px;
           padding-bottom: 20px;
-          word-wrap: break-word;
         }
       }
     }

@@ -1,11 +1,11 @@
-.chat_side
-  .chat_side_top
-    .chat_side_top_name
+.chat-side
+  .top
+    .top__name
       %p#user ユーザーの名前
-    .chat_side_top_icon
+    .top__icon
       = link_to 'http://google.co.jp' do
         %i.fa.fa-edit
       = link_to 'http://yahoo.co.jp' do
         %i.fa.fa-cog
-  .chat_side_lists
+  .lists
     = render partial:'messages/group'

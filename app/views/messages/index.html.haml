@@ -1,26 +1,25 @@
-%div{:class => "header"}
-  %h1 メッセージ投稿完了しました
+= render partial:'messages/header'
 
-%div{:class => "chat"}
-  %div{:class => "chat_main"}
-    %div{:class => "chat_main_top"}
-      %div{:class => "chat_main_top_groupedit"}
+.chat
+  .chat_main
+    .chat_main_top
+      .chat_main_top_groupedit
         = link_to 'http://google.co.jp' do
           %p Edit
-      %div{:class => "chat_main_top_groupname"}
+      .chat_main_top_groupname
         %p グループの名前を表示
-      %div{:class => "chat_main_top_groupmember"}
+      .chat_main_top_groupmember
         %p MEMBER:グループメンバーの名前を表示
-    %div{:class => "chat_main_message"}
-      %div{:class => "chat_main_message_top_marjin"}
+    .chat_main_message
+      .chat_main_message_top_marjin
       = render partial:'messages/message'
-    %div{:class => "chat_main_bottom"}
-      %div{:class => "chat_main_bottom_send"}
+    .chat_main_bottom
+      .chat_main_bottom_send
         = link_to 'http://google.co.jp' do
           %p Send
-      %div{:class => "chat_main_bottom_text"}
+      .chat_main_bottom_text
         %textarea{:placeholder => "type a message"}
-        %div{:class => "chat_main_bottom_imageicon"}
+        .chat_main_bottom_imageicon
           = link_to 'http://google.co.jp' do
             %i.fa.fa-image
   = render partial:'messages/sidebar'

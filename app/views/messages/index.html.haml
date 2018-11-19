@@ -23,15 +23,4 @@
         %div{:class => "chat_main_bottom_imageicon"}
           = link_to 'http://google.co.jp' do
             %i.fa.fa-image
-  %div{:class => "chat_side"}
-    %div{:class => "chat_side_top"}
-      %div{:class => "chat_side_top_name"}
-        %p{:id => "user"} ユーザーの名前
-      %div{:class => "chat_side_top_icon"}
-        = link_to 'http://google.co.jp' do
-          %i.fa.fa-edit
-        = link_to 'http://yahoo.co.jp' do
-          %i.fa.fa-cog
-    %div{:class => "chat_side_lists"}
-      = render partial:'messages/group'
-
+  = render partial:'messages/sidebar'

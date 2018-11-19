@@ -1,0 +1,176 @@
+@import "./mixin";
+
+$chat_side-basecolor: #253141;
+
+a {
+color: #FFF;
+text-decoration: none ;
+}
+
+.header {
+  background-color: #38AEF0;
+  color: #FFF;
+  font-size: 16px;
+  text-align: center;
+  width: 100%;
+}
+
+.chat{
+  .chat-main{
+    width: 79%;
+    float: right;
+    a {
+      color: black;
+    }
+    .top{
+      height: 100px;
+      background-color: #FFF;
+      border: 1px solid #eee;
+      &__edit{
+        height: 40px;
+        width: 70px;
+        float: right;
+        position: relative;
+        top: 28px;
+        @include chat_main_rightside_marjin;
+        text-align: center;
+        line-height: 40px;
+        border: solid;
+        border-width: 2px;
+        color: #38AEF0;
+        p{
+          color: #38AEF0;
+        }
+      }
+      &__name{
+        height: 40px;
+        position: relative;
+        top: 35px;
+        @include chat_main_leftside_marjin;
+        font-size: 20px;
+        color: #333333;
+      }
+      &__member{
+        height: 20px;
+        position: relative;
+        top: 35px;
+        @include chat_main_leftside_marjin;
+        color: #999999;
+        font-size: 12px;
+      }
+    }
+    .messages{
+      height: calc(100vh - 190px);
+      width: 100%;
+      overflow-y: scroll;
+      .message{
+        margin: 46px 40px 40px 40px;
+        &__name{
+          float: left;
+          font-size: 16px;
+          font-weight: bold;
+          color:  #434A54;
+        }
+        &__time{
+          float: left;
+          padding: 0px 10px;
+          font-size: 12px;
+          color:  #999;
+        }
+        &__text{
+          word-wrap: break-word;
+          padding: 10px 0px 0px 0px;
+          clear: both;
+          font-size: 14px;
+          color:  #434A54;
+        }
+        &__image{
+        }
+      }
+    }
+    .bottom{
+      height: 90px;
+      width: 100%;
+      background-color: #B8C3C7;
+      &__send{
+        height: 50px;
+        width: 100px;
+        float: right;
+        line-height: 50px;
+        text-align: center;
+        color: #FFF;
+        position: relative;
+        top: 20px;
+        @include chat_main_rightside_marjin;
+        background-color: #38AEF0;
+        a{
+          color: #FFF;
+        }
+      }
+      &__text{
+        textarea{
+          height: 50px;
+          width: 930px;
+          background-color: #FFF;
+          position: relative;
+          top: 20px;
+          left: 20px;
+          color: #434A54;
+          padding-left: 10px;
+          line-height: 50px;
+        }
+      }
+      &__image-icon{
+        color: black;
+        float: left;
+        position: relative;
+        top: 35px;
+        left: 940px;
+      }
+    }
+  }
+  .chat-side{
+    background-color: $chat_side-basecolor;
+    width: 21%;
+    color: #FFF;
+    .top{
+      height: 100px;
+      background-color: $chat_side-basecolor;
+      border: 1px solid $chat_side-basecolor;
+      &__name{
+        width:179px;
+        margin-top: 40px;
+        font-weight: 700;
+        font-size: 16px;
+        margin-left: 20px;
+        padding-left: 1px;
+        word-wrap: break-all;
+        float: left;
+      }
+      &__icon{
+        width:80px;
+        @include chat_start_position;
+        margin-right: 20px;
+        padding-top: 5px;
+        float: right;
+      }
+    }
+    .lists{
+      height: calc(100vh - 100px);
+      overflow-y: scroll;
+      .group{
+        width:260px;
+        margin-left: 20px;
+        &__title{
+          font-size: 15px;
+          padding-top: 20px;
+        }
+        &__text{
+          font-size: 11px;
+          padding-top: 5px;
+          padding-bottom: 20px;
+        }
+      }
+    }
+  }
+}

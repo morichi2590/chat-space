@@ -1,0 +1,24 @@
+= render partial:'messages/header'
+
+.chat
+  .chat-main
+    .top
+      .top__edit
+        = link_to 'http://google.co.jp' do
+          %p Edit
+      .top__name
+        %p グループの名前を表示
+      .top__member
+        %p MEMBER:グループメンバーの名前を表示
+    .messages
+      = render partial:'messages/message'
+    .bottom
+      .bottom__send
+        = link_to 'http://google.co.jp' do
+          %p Send
+      .bottom__text
+        %textarea{placeholder: "type a message"}
+        .bottom__image-icon
+          = link_to 'http://google.co.jp' do
+            %i.fa.fa-image
+  = render partial:'messages/sidebar'

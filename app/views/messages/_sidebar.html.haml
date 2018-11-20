@@ -6,7 +6,7 @@
     .top__icon
       = link_to edit_user_path(current_user) do
         %i.fa.fa-edit
-      = link_to 'http://yahoo.co.jp' do
+      = link_to new_group_path do
         %i.fa.fa-cog
   .lists
     = render partial:'messages/group'

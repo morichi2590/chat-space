@@ -1,9 +1,10 @@
 .chat-side
   .top
     .top__name
-      %p#user ユーザーの名前
+      %p#user
+        = current_user.name
     .top__icon
-      = link_to 'http://google.co.jp' do
+      = link_to edit_user_path(current_user) do
         %i.fa.fa-edit
       = link_to 'http://yahoo.co.jp' do
         %i.fa.fa-cog

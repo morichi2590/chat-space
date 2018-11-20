@@ -1,18 +1,6 @@
-@import "./mixin";
-
-$chat_side-basecolor: #253141;
-
 a {
 color: #FFF;
 text-decoration: none ;
-}
-
-.header {
-  background-color: #38AEF0;
-  color: #FFF;
-  font-size: 16px;
-  text-align: center;
-  width: 100%;
 }
 
 .chat{
@@ -37,9 +25,9 @@ text-decoration: none ;
         line-height: 40px;
         border: solid;
         border-width: 2px;
-        color: #38AEF0;
+        color: $light_blue;
         p{
-          color: #38AEF0;
+          color: $light_blue;
         }
       }
       &__name{
@@ -102,7 +90,7 @@ text-decoration: none ;
         position: relative;
         top: 20px;
         @include chat_main_rightside_marjin;
-        background-color: #38AEF0;
+        background-color: $light_blue;
         a{
           color: #FFF;
         }

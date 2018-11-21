@@ -1,6 +1,7 @@
-.group
-  = link_to 'http://google.co.jp' do
-    .group__title
-      %h Groupタイトル
-    .group__text
-      %p グループ内のメッセージのやりとりプレビュー
+- current_user.groups.each do |group|
+  .group
+    = link_to group_messages_path(group) do
+      .group__title
+        = group.name
+      .group__text
+        メッセージはまだありません。

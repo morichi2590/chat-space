@@ -26,12 +26,13 @@ $(function () {
       contentType: false
     })
     .done(function(data){
+      var ms = ".messages";
       var html = buildHTML(data);
-      $('.messages').append(html)
+      $(ms).append(html)
       $('.bottom__text').val('')
       $('.hidden').val('')
       $('.bottom__send').prop('disabled', false);
-      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+      $(ms).animate({scrollTop: $(ms)[0].scrollHeight}, 'fast');
     })
     .fail(function() {
       alert('error');

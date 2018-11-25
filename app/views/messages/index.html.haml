@@ -12,7 +12,7 @@
     .messages
       = render partial: 'messages/message', collection: @messages
     .bottom
-      = form_for [@group, @message] do |f|
+      = form_for [@group, @message] , html: {id: 'ms-form'} do |f|
         = f.submit 'Send', class: 'bottom__send'
         = f.text_field :body, class: 'bottom__text', placeholder: 'type a message'
         = f.label :image, class: 'bottom__image' do

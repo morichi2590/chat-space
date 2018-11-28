@@ -1,15 +1,15 @@
 $(function () {
-    function buildHTML(message){
-    var html = `<div class="message">
+  function buildHTML(message){
+    var html = `<div class="message" data-message-id=${message.id}>
       <div class="message__name"> ${message.user_name} </div>
       <div class="message__time"> ${message.created_at} </div>
       <div class="message__clear"></div>
       <div class="message__text"> ${message.body} </div>
       </div>`;
     if (message.image == null){
-        html = $(html).append(``)
+      html = $(html).append(``)
     } else {
-        html = $(html).append(`<img class="message__image" src="${message.image}" >`)
+      html = $(html).append(`<img class="message__image" src="${message.image}" >`)
     }
     return html;
   }
@@ -38,4 +38,30 @@ $(function () {
       alert('error');
     });
   })
+  setInterval(function() {
+    if($('.message')[0]){
+      var message_id = $('.message:last').data('message-id');
+    } else {
+      var message_id = 0
+    }
+    $.ajax({
+      type: 'GET',
+      url: location.href,
+      data: {
+        message: { id: message_id }
+      },
+      dataType: 'json'
+    })
+    .done(function(data) {
+      data.forEach(function(message) {
+      var html = buildHTML(message);
+      $('.messages').append(html);
+      });
+    })
+    .fail(function(data) {
+      alert('自動更新に失敗しました');
+    })
+  },5000);
 });
+
+

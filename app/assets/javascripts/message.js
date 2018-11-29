@@ -40,27 +40,30 @@ $(function () {
   })
   setInterval(function() {
     if($('.message')[0]){
-      var message_id = $('.message:last').data('message-id');
-    } else {
-      var message_id = 0
-    }
-    $.ajax({
-      type: 'GET',
-      url: location.href,
-      data: {
-        message: { id: message_id }
-      },
-      dataType: 'json'
-    })
-    .done(function(data) {
-      data.forEach(function(message) {
-      var html = buildHTML(message);
-      $('.messages').append(html);
-      });
-    })
-    .fail(function(data) {
-      alert('自動更新に失敗しました');
-    })
+        var message_id = $('.message:last').data('message-id');
+      } else {
+        var message_id = 0
+      }
+    if (window.location.href.match(/\/groups\/\d+\/messages/)){
+      $.ajax({
+        type: 'GET',
+        url: location.href,
+        data: {
+          message: { id: message_id }
+        },
+        dataType: 'json'
+      })
+      .done(function(data) {
+        data.forEach(function(message) {
+        var html = buildHTML(message);
+        $('.messages').append(html);
+        });
+      })
+      .fail(function(data) {
+        alert('自動更新に失敗しました');
+      })
+    } else
+    clearInterval(interval);
   },5000);
 });
 

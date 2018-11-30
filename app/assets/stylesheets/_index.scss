@@ -5,7 +5,7 @@ text-decoration: none ;
 
 .chat{
   .chat-main{
-    width: 79%;
+    width: 80%;
     float: right;
     a {
       color: black;
@@ -128,7 +128,7 @@ text-decoration: none ;
   }
   .chat-side{
     background-color: $chat_side-basecolor;
-    width: 21%;
+    width: 20%;
     color: #FFF;
     float: left;
     .top{
@@ -136,7 +136,6 @@ text-decoration: none ;
       background-color: $chat_side-basecolor;
       border: 1px solid $chat_side-basecolor;
       &__name{
-        width:179px;
         margin-top: 40px;
         font-weight: 700;
         font-size: 16px;

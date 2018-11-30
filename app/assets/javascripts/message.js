@@ -1,5 +1,9 @@
 $(function () {
   function buildHTML(message){
+    console.log(message)
+    if (message.body == null && message.image == null) {
+      return false;
+    } else {
     var html = `<div class="message" data-message-id=${message.id}>
       <div class="message__name"> ${message.user_name} </div>
       <div class="message__time"> ${message.created_at} </div>
@@ -12,6 +16,7 @@ $(function () {
       html = $(html).append(`<img class="message__image" src="${message.image}" >`)
     }
     return html;
+    }
   }
   $('#ms-form').on('submit',function(e) {
     e.preventDefault();
@@ -27,12 +32,16 @@ $(function () {
     })
     .done(function(data){
       var ms = ".messages";
+      if (buildHTML(data) == false) {
+      $('.bottom__send').prop('disabled', false);
+      } else {
       var html = buildHTML(data);
       $(ms).append(html)
       $('.bottom__text').val('')
       $('.hidden').val('')
       $('.bottom__send').prop('disabled', false);
       $(ms).animate({scrollTop: $(ms)[0].scrollHeight}, 'fast');
+      }
     })
     .fail(function() {
       alert('error');
@@ -44,6 +53,7 @@ $(function () {
       } else {
         var message_id = 0
       }
+          console.log(message_id)
     if (window.location.href.match(/\/groups\/\d+\/messages/)){
       $.ajax({
         type: 'GET',

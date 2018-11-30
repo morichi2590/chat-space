@@ -146,10 +146,9 @@ text-decoration: none ;
       }
       &__icon{
         width:80px;
-        @include chat_start_position;
-        margin-right: 20px;
-        padding-top: 5px;
-        float: right;
+        position: absolute;
+        top: 40px;
+        left: 180px;
       }
     }
     .lists{

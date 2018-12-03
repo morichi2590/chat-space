@@ -136,6 +136,7 @@ text-decoration: none ;
       background-color: $chat_side-basecolor;
       border: 1px solid $chat_side-basecolor;
       &__name{
+        display: inline;
         margin-top: 40px;
         font-weight: 700;
         font-size: 16px;
@@ -145,17 +146,16 @@ text-decoration: none ;
         float: left;
       }
       &__icon{
-        width:80px;
-        position: absolute;
+        display: inline;
+        position: relative;
         top: 40px;
-        left: 180px;
+        left: 80px;
       }
     }
     .lists{
       height: calc(100vh - 100px);
       overflow-y: scroll;
       .group{
-        width:260px;
         margin-left: 20px;
         &__title{
           font-size: 15px;

@@ -2,7 +2,7 @@
   .message__name
     = message.user.name
   .message__time
-    = message.created_at.strftime("%Y/%m/%d %H:%M")
+    = message.created_at.in_time_zone('Tokyo').strftime("%Y/%m/%d %H:%M")
   .message__clear
   - if message.body.present?
     .message__text
